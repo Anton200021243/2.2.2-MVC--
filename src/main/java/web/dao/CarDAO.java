@@ -24,8 +24,10 @@ public class CarDAO implements DAO {
     public List<Car> getCars(int number) {
         if (number >= cars.size()) {
             return cars;
-        } else {
+        } else if (number > 0) {
             return cars.subList(0, number);
+        } else {
+            return null;
         }
     }
 }

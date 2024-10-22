@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import web.service.CarService;
 
 @Controller
-@RequestMapping("/car")
+@RequestMapping("/cars")
 public class CarController {
     CarService carService;
 
