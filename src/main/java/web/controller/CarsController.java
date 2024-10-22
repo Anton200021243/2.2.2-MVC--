@@ -10,16 +10,16 @@ import web.service.CarService;
 
 @Controller
 @RequestMapping("/cars")
-public class CarController {
+public class CarsController {
     CarService carService;
 
     @Autowired
-    public CarController(CarService carService) {
+    public CarsController(CarService carService) {
         this.carService = carService;
     }
 
     @GetMapping
-    public String index(@RequestParam("count") int count, Model model) {
+    public String index(@RequestParam(value = "count", required = false, defaultValue = "5") int count, Model model) {
         model.addAttribute("cars", carService.getCars(count));
         return "/cars";
     }
