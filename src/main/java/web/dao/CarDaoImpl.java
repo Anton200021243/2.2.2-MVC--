@@ -1,13 +1,13 @@
 package web.dao;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class CarDAO implements DAO {
+@Repository
+public class CarDaoImpl implements CarDao {
     private List<Car> cars;
 
     {
@@ -27,7 +27,7 @@ public class CarDAO implements DAO {
         } else if (number > 0) {
             return cars.subList(0, number);
         } else {
-            return null;
+            return List.of();
         }
     }
 }
